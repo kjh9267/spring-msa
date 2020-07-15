@@ -1,6 +1,7 @@
 server:
   port: 8081
 
+
 hystrix:
   command:
     getPostDetail:
@@ -14,4 +15,15 @@ post-service:
   ribbon:
     MaxAutoRetries: 0
     MaxAutoRetiresNextServer: 1
-    listOfServers: localhost:10000, localhost:8082
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+  instance:
+    prefer-ip-address: true
+
+spring:
+  application:
+    name: home-service
