@@ -8,16 +8,17 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class PostService {
 
+    public static final String URL = "http://post-service/post/";
+
     @Autowired
     RestTemplate restTemplate;
 
     @HystrixCommand(fallbackMethod = "getPostDetailFallback")
     public String getPostDetail(String postId) {
-        return restTemplate.getForObject("http://post-service/post/" + postId, String.class);
+        return restTemplate.getForObject(URL + postId, String.class);
     }
 
     public String getPostDetailFallback(String postId, Throwable throwable) {
-
         System.out.println(throwable);
         return "Post server error" + " " + postId;
     }

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
-@RequestMapping(path = "/")
+@RequestMapping(path = "/home")
 public class HomeController {
 
     @Autowired

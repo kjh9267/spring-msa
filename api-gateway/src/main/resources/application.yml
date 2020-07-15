@@ -1,0 +1,65 @@
+spring:
+  application:
+    name: api-gateway
+
+server:
+  port: 9000
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+home-service:
+  ribbon:
+    MaxAutoRetriesNextServer: 1
+
+post-service:
+  ribbon:
+    MaxAutoRetriesNextServer: 1
+
+zuul:
+  routes:
+    home-service:
+      path: /home/**
+      serviceId: home-service
+      stripPrefix: false
+    post-service:
+      path: /post/**
+      serviceId: post-service
+      stripPrefix: false
+  ribbon-isolation-strategy: thread
+  thread-pool:
+    use-separate-thread-pools: true
+    thread-pool-key-prefix: zuul-
+
+
+hystrix:
+  command:
+    home-service:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000
+      circuitBreaker:
+        requestVolumeThreshold: 2
+        errorThresholdPercentage: 50
+    post-service:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000
+      circuitBreaker:
+        requestVolumeThreshold: 2
+        errorThresholdPercentage: 50
+  threadpool:
+    zuul-home:
+      coreSize: 30
+      maximumSize: 100
+      allowMaximumSizeToDivergeFromCoreSize: true
+    zuul-post:
+      coreSize: 30
+      maximumSize: 100
+      allowMaximumSizeToDivergeFromCoreSize: true
