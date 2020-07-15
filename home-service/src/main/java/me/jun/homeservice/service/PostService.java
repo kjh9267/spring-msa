@@ -13,10 +13,12 @@ public class PostService {
 
     @HystrixCommand(fallbackMethod = "getPostDetailFallback")
     public String getPostDetail(String postId) {
-        return restTemplate.getForObject("http://localhost:8082/post/" + postId, String.class);
+        return restTemplate.getForObject("http://post-service/post/" + postId, String.class);
     }
 
-    public String getPostDetailFallback(String postId) {
+    public String getPostDetailFallback(String postId, Throwable throwable) {
+
+        System.out.println(throwable);
         return "Post server error" + " " + postId;
     }
 }

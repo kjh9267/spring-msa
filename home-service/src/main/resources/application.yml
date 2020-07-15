@@ -1,0 +1,17 @@
+server:
+  port: 8081
+
+hystrix:
+  command:
+    getPostDetail:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+
+
+post-service:
+  ribbon:
+    MaxAutoRetries: 0
+    MaxAutoRetiresNextServer: 1
+    listOfServers: localhost:8082
