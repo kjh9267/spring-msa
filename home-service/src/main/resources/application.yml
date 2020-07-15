@@ -14,4 +14,4 @@ post-service:
   ribbon:
     MaxAutoRetries: 0
     MaxAutoRetiresNextServer: 1
-    listOfServers: localhost:8082
+    listOfServers: localhost:10000, localhost:8082
