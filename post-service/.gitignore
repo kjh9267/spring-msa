@@ -31,8 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
-
-
-home-service.iml
 mvnw*
 .mvn
+post-service.iml

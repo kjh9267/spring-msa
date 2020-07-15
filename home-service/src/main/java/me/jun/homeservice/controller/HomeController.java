@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
-@RequestMapping(path = "/home")
+@RequestMapping(path = "/")
 public class HomeController {
 
     @Autowired
@@ -18,7 +18,7 @@ public class HomeController {
     @Autowired
     PostService postService;
 
-    @GetMapping(path = "/{postId}")
+    @GetMapping(path = "post/{postId}")
     public String getPost(@PathVariable String postId) {
         return postService.getPostDetail(postId);
     }
