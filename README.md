@@ -11,3 +11,5 @@
 
 [x] API Gateway
 - Spring Cloud Netflix Zuul
+
+[x] Docker Files in each End Point
