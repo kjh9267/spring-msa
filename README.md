@@ -1,4 +1,6 @@
-# Spring MSA
+# MSA with Spring Cloud
+
+- Docker Files in each End Points
 
 - Circuit Breaker
 - [x] Spring Cloud Netflix Hystrix
@@ -11,5 +13,3 @@
 
 - API Gateway
 - [x] Spring Cloud Netflix Zuul
-
-- Docker Files in each End Points
