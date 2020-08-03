@@ -1,15 +1,15 @@
 # Spring MSA
 
-[x] Circuit Breaker
-- Spring Cloud Netflix Hystrix
+- Circuit Breaker
+- [x] Spring Cloud Netflix Hystrix
 
-[x] Load Balancer
-- Spring Cloud Netflix Ribbon
+- Load Balancer
+- [x] Spring Cloud Netflix Ribbon
 
-[x] Service Discovery
-- Spring Cloud Netflix Eureka
+- Service Discovery
+- [x] Spring Cloud Netflix Eureka
 
-[x] API Gateway
-- Spring Cloud Netflix Zuul
+- API Gateway
+- [x] Spring Cloud Netflix Zuul
 
-[x] Docker Files in each End Point
+- Docker Files in each End Points
